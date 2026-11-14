@@ -4,6 +4,7 @@ import { z } from "zod";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { classifyWithRules } from "@/lib/classification";
+import { normalizeCurrency } from "@/lib/currency";
 import { defaultTaxonomy, type Taxonomy } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -95,7 +96,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ classification: classifyWithRules(file.name, taxonomy), notice: "This scanned PDF has no selectable text. Upload a photo or image for AI reading." });
   }
 
-  const prompt = `Read this invoice and return one JSON object with vendor, invoice_number, invoice_date (YYYY-MM-DD or empty), amount (number only), currency (ISO code), type, department, entity, category, confidence (0 to 1), notes (one concise sentence). Choose classification values ONLY from these lists: types=${JSON.stringify(taxonomy.types)}, departments=${JSON.stringify(taxonomy.departments)}, entities=${JSON.stringify(taxonomy.entities)}, categories=${JSON.stringify(taxonomy.categories)}. If a fact is missing, use an empty string or 0. Do not invent invoice numbers, dates or amounts. Confidence should reflect uncertainty. Invoice filename: ${file.name}.`;
+  const prompt = `Read this invoice and return one JSON object with vendor, invoice_number, invoice_date (YYYY-MM-DD or empty), amount (number only), currency (ISO code; use DZD for Algerian dinar, including amounts marked DA, دج, or د.ج), type, department, entity, category, confidence (0 to 1), notes (one concise sentence). Choose classification values ONLY from these lists: types=${JSON.stringify(taxonomy.types)}, departments=${JSON.stringify(taxonomy.departments)}, entities=${JSON.stringify(taxonomy.entities)}, categories=${JSON.stringify(taxonomy.categories)}. If a fact is missing, use an empty string or 0. Do not invent invoice numbers, dates or amounts. Confidence should reflect uncertainty. Invoice filename: ${file.name}.`;
   const content = file.type === "application/pdf"
     ? [{ type: "text", text: `${prompt}\n\nInvoice text:\n${text}` }]
     : [{ type: "text", text: prompt }, { type: "image_url", image_url: { url: `data:${file.type};base64,${Buffer.from(bytes).toString("base64")}` } }];
@@ -115,6 +116,7 @@ export async function POST(request: NextRequest) {
     const parsed = schema.parse(JSON.parse(result.choices?.[0]?.message?.content || "{}"));
     return NextResponse.json({ classification: {
       ...parsed,
+      currency: normalizeCurrency(parsed.currency),
       type: safeChoice(parsed.type, taxonomy.types, taxonomy.types[0] || "Other"),
       department: safeChoice(parsed.department, taxonomy.departments, "Unassigned"),
       entity: safeChoice(parsed.entity, taxonomy.entities, "Unassigned"),

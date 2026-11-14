@@ -1,7 +1,15 @@
 import { defaultTaxonomy, type Classification, type Taxonomy } from "./types";
+import { normalizeCurrency } from "./currency";
 
 function choose(text: string, choices: string[], fallback: string) {
   return choices.find((choice) => text.includes(choice.toLowerCase())) || fallback;
+}
+
+function parseAmount(value: string): number {
+  const compact = value.replace(/\s/g, "");
+  const decimal = Math.max(compact.lastIndexOf("."), compact.lastIndexOf(","));
+  const fraction = decimal >= 0 && compact.length - decimal - 1 === 2;
+  return Number(fraction ? `${compact.slice(0, decimal).replace(/[.,]/g, "")}.${compact.slice(decimal + 1)}` : compact.replace(/[.,]/g, ""));
 }
 
 export function classifyWithRules(text: string, taxonomy: Taxonomy = defaultTaxonomy): Classification {
@@ -19,7 +27,7 @@ export function classifyWithRules(text: string, taxonomy: Taxonomy = defaultTaxo
   const category = match && taxonomy.categories.includes(match[1]) ? match[1] : taxonomy.categories.at(-1) || "Other";
   const department = match && taxonomy.departments.includes(match[2]) ? match[2] : taxonomy.departments.at(-1) || "Unassigned";
   const type = /credit note|refund/.test(normalized) ? "Credit note" : /receipt/.test(normalized) ? "Receipt" : /subscription|service|consult|software/.test(normalized) ? "Service invoice" : "Supplier invoice";
-  const money = text.match(/(?:total|amount due|balance due)\s*[:\-]?\s*(?:USD|EUR|GBP|NGN|[$€£₦])?\s*([\d,]+\.\d{2})/i);
+  const money = text.match(/(?:total(?:\s+due)?|amount due|balance due|montant\s+(?:total|ttc)|net\s+à\s+payer|الإجمالي)\s*[:\-]?\s*(?:USD|EUR|GBP|NGN|DZD|DA|د\.?ج|[$€£₦])?\s*([\d][\d\s.,]*)(?:\s*(?:DZD|DA|د\.?ج))?/iu);
   const number = text.match(/(?:invoice\s*(?:no\.?|number|#)|inv\s*#)\s*[:\-]?\s*([A-Z0-9-]+)/i);
   const date = text.match(/\b(20\d{2}-\d{2}-\d{2})\b/);
   const firstLine = text.split(/\r?\n/).find((line) => line.trim().length > 2)?.trim() || "Unknown vendor";
@@ -27,8 +35,8 @@ export function classifyWithRules(text: string, taxonomy: Taxonomy = defaultTaxo
     vendor: firstLine.slice(0, 80),
     invoice_number: number?.[1] || "",
     invoice_date: date?.[1] || "",
-    amount: money ? Number(money[1].replaceAll(",", "")) : 0,
-    currency: /EUR|€/.test(text) ? "EUR" : /GBP|£/.test(text) ? "GBP" : /NGN|₦/.test(text) ? "NGN" : "USD",
+    amount: money ? parseAmount(money[1]) : 0,
+    currency: /\bDZD\b|\bDA\b|د(?:\.|\s)?ج/iu.test(text) ? normalizeCurrency("DA") : /EUR|€/.test(text) ? "EUR" : /GBP|£/.test(text) ? "GBP" : /NGN|₦/.test(text) ? "NGN" : "USD",
     type: choose(type.toLowerCase(), taxonomy.types, taxonomy.types[0] || "Other"),
     department,
     entity: taxonomy.entities[0] || "Unassigned",
