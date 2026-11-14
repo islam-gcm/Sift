@@ -11,3 +11,5 @@
 [dir="rtl"] .field input[type="email"], [dir="rtl"] .field input[type="date"], [dir="rtl"] .field input[type="number"], [dir="rtl"] #login-email { direction: ltr; text-align: right; }
 @media (max-width: 850px) { [dir="rtl"] .main-column { margin-right: 220px; } }
 @media (max-width: 650px) { [dir="rtl"] .sidebar { transform: translateX(100%); } [dir="rtl"] .sidebar.sidebar-open { transform: translateX(0); } [dir="rtl"] .main-column { margin-right: 0; } .topbar-right .language-picker select { min-width: 75px; } }
+@media (max-width: 650px) { .topbar-right .mode-pill { display: none; } }
+@media (max-width: 370px) { .topbar-right .top-avatar { display: none; } }
