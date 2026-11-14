@@ -1,0 +1,85 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 3211 >>
+stream
+0.08 0.12 0.25 rg 0 700 612 92 re f
+0.32 0.39 0.91 rg 42 728 36 36 re f
+BT /F2 16 Tf 1 1 1 rg 1 0 0 1 54 739 Tm (N) Tj ET
+BT /F2 17 Tf 1 1 1 rg 1 0 0 1 91 749 Tm (NORTHSTAR OFFICE SUPPLY) Tj ET
+BT /F1 9 Tf 0.77 0.80 0.91 rg 1 0 0 1 91 729 Tm (Business essentials, delivered.) Tj ET
+BT /F2 10 Tf 0.77 0.80 0.91 rg 1 0 0 1 458 748 Tm (INVOICE) Tj ET
+BT /F2 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 42 665 Tm (INVOICE NUMBER) Tj ET
+BT /F2 12 Tf 0.12 0.16 0.26 rg 1 0 0 1 42 646 Tm (NS-2026-084) Tj ET
+BT /F2 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 250 665 Tm (ISSUE DATE) Tj ET
+BT /F1 12 Tf 0.12 0.16 0.26 rg 1 0 0 1 250 646 Tm (2026-11-14) Tj ET
+BT /F2 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 430 665 Tm (PAYMENT DUE) Tj ET
+BT /F1 12 Tf 0.12 0.16 0.26 rg 1 0 0 1 430 646 Tm (2026-12-14) Tj ET
+0.88 0.90 0.94 RG 0.7 w 42 625 m 570 625 l S
+BT /F2 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 42 596 Tm (BILL TO) Tj ET
+BT /F2 13 Tf 0.12 0.16 0.26 rg 1 0 0 1 42 576 Tm (Sift Demo Workspace) Tj ET
+BT /F1 10 Tf 0.40 0.45 0.56 rg 1 0 0 1 42 558 Tm (Accounts Payable) Tj ET
+BT /F1 10 Tf 0.40 0.45 0.56 rg 1 0 0 1 42 542 Tm (Lagos, Nigeria) Tj ET
+0.94 0.95 0.98 rg 42 490 528 27 re f
+BT /F2 9 Tf 0.40 0.45 0.56 rg 1 0 0 1 54 500 Tm (DESCRIPTION) Tj ET
+BT /F2 9 Tf 0.40 0.45 0.56 rg 1 0 0 1 355 500 Tm (QTY) Tj ET
+BT /F2 9 Tf 0.40 0.45 0.56 rg 1 0 0 1 414 500 Tm (UNIT PRICE) Tj ET
+BT /F2 9 Tf 0.40 0.45 0.56 rg 1 0 0 1 514 500 Tm (AMOUNT) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 54 461 Tm (Ergonomic office chair) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 360 461 Tm (2) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 414 461 Tm ($85.00) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 510 461 Tm ($170.00) Tj ET
+0.92 0.93 0.96 RG 0.7 w 54 447 m 558 447 l S
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 54 419 Tm (Desk organizer set) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 360 419 Tm (3) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 414 419 Tm ($18.25) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 510 419 Tm ($54.75) Tj ET
+0.92 0.93 0.96 RG 0.7 w 54 405 m 558 405 l S
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 54 377 Tm (Standard delivery) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 360 377 Tm (1) Tj ET
+BT /F1 11 Tf 0.35 0.40 0.51 rg 1 0 0 1 414 377 Tm ($24.00) Tj ET
+BT /F1 11 Tf 0.12 0.16 0.26 rg 1 0 0 1 510 377 Tm ($24.00) Tj ET
+0.92 0.93 0.96 RG 0.7 w 54 363 m 558 363 l S
+BT /F1 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 54 315 Tm (Payment terms: Net 30 days) Tj ET
+BT /F1 10 Tf 0.48 0.53 0.64 rg 1 0 0 1 54 298 Tm (Please include the invoice number with your payment.) Tj ET
+BT /F1 10 Tf 0.40 0.45 0.56 rg 1 0 0 1 385 366 Tm (Subtotal) Tj ET
+BT /F1 10 Tf 0.12 0.16 0.26 rg 1 0 0 1 512 366 Tm ($248.75) Tj ET
+BT /F1 10 Tf 0.40 0.45 0.56 rg 1 0 0 1 385 344 Tm (Tax) Tj ET
+BT /F1 10 Tf 0.12 0.16 0.26 rg 1 0 0 1 512 344 Tm ($0.00) Tj ET
+0.82 0.85 0.91 RG 0.7 w 385 332 m 570 332 l S
+0.94 0.95 0.99 rg 378 282 192 36 re f
+BT /F2 11 Tf 0.28 0.34 0.75 rg 1 0 0 1 391 295 Tm (TOTAL DUE) Tj ET
+BT /F2 13 Tf 0.12 0.16 0.26 rg 1 0 0 1 487 294 Tm ($248.75) Tj ET
+0.88 0.90 0.94 RG 0.7 w 42 73 m 570 73 l S
+BT /F1 9 Tf 0.48 0.53 0.64 rg 1 0 0 1 42 54 Tm (Thank you for your business.) Tj ET
+BT /F2 9 Tf 0.48 0.53 0.64 rg 1 0 0 1 460 54 Tm (NORTHSTAR OFFICE SUPPLY) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000348 00000 n 
+0000000450 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3713
+%%EOF
