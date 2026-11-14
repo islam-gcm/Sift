@@ -43,6 +43,6 @@ export function classifyWithRules(text: string, taxonomy: Taxonomy = defaultTaxo
     category,
     confidence: match ? 0.55 : 0.25,
     source: "rules",
-    notes: "Suggested using simple keyword rules. Please check every field.",
+    notes: "",
   };
 }
